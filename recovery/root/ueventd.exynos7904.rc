@@ -130,12 +130,20 @@
 # audio
 /dev/seiren               0660   system     audio
 
+#Mobicore
+/dev/mobicore             0700   system     system
+/dev/mobicore-user        0666   radio      system
+
+# Secure MEM driver
+/dev/s5p-smem             0660   system     system
+
 #cbd
 /dev/umts_ramdump0        0660   radio      radio
 
 # Modem Interface
 /dev/block/platform/13500000.dwmmc0/by-name/RADIO	0660   system     radio
 /dev/block/platform/13500000.dwmmc0/by-name/CP_DEBUG   0660	radio	system
+/sys/devices/platform/10000.mif_pdata	sim/ds_detect	0660	radio	system
 /dev/umts*            0660   system      radio
 /dev/umts_csd         0660   system      loop_radio
 /dev/smd4               0660   system     radio
@@ -207,3 +215,8 @@
 /dev/nwfsdev		0660	system		system
 /dev/tz_shmem_validator	0666	system		system
 /dev/tz_wormhole	0666	system		system
+
+# Sensor
+/dev/input/event* 0660 system input
+/sys/devices/virtual/input/input*   enable      0660  system   input
+/sys/devices/virtual/input/input*   poll_delay  0660  system   input
